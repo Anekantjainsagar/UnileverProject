@@ -1,101 +1,96 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { LuEyeOff, LuEye } from "react-icons/lu";
 
-export default function Home() {
+const App = () => {
+  const history = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
+  const [user, setUser] = useState({ email: "", password: "" });
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="flex h-screen">
+      <div className="w-5/12 p-[62px] flex flex-col items-start justify-between h-full">
         <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src={"/logo.png"}
+          alt="Logo"
+          width={1000}
+          height={1000}
+          className="w-[5vw]"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+        <div className="w-full">
+          <h2 className="text-darkBlack text-4xl font-semibold">
+            Login to continue
+          </h2>{" "}
+          <div className="flex flex-col my-6">
+            <label
+              htmlFor="email"
+              className="mb-1.5 text-sm min-[1600px]:text-base"
+            >
+              Email
+            </label>
+            <input
+              id="email"
+              value={user?.email}
+              onChange={(e) => {
+                setUser({ ...user, email: e.target.value });
+              }}
+              type="text"
+              placeholder="Enter Email"
+              className="bg-transparent w-8/12 outline-none border border-gray-300 px-4 py-2 rounded-lg text-lg"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </div>
+          <label htmlFor="password" className="text-sm min-[1600px]:text-base">
+            Password
+          </label>
+          <div className="w-8/12 relative mt-1.5">
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              value={user?.password}
+              onChange={(e) => {
+                setUser({ ...user, password: e.target.value });
+              }}
+              placeholder="Enter Password"
+              className="bg-transparent w-full outline-none border border-gray-300 px-4 py-2 rounded-lg text-lg"
+            />
+            <div
+              className="absolute top-1/2 -translate-y-1/2 text-gray-500 right-4 text-lg min-[1600px]:text-2xl cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowPassword(!showPassword);
+              }}
+            >
+              {showPassword ? <LuEye /> : <LuEyeOff />}
+            </div>
+          </div>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              history.push("/dashboard");
+            }}
+            className="text-white bg-darkBlue mt-8 w-8/12 py-3 text-xl font-semibold rounded-lg"
           >
-            Read our docs
-          </a>
+            Login
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="py-10"></div>
+      </div>
+      <div className="w-7/12 bg-lightBlue pl-[80px] flex flex-col items-start justify-center m-5 rounded-lg overflow-hidden">
+        <h1 className="text-lightGrey text-5xl font-semibold w-6/12 mb-6 leading-tight">
+          Real-Time Inventory Verification Platform
+        </h1>
+        <Image
+          src={"/dashboard.png"}
+          alt="Dashboard"
+          width={1000}
+          height={1000}
+          className="w-[100vw] object-cover object-left h-[75vh] border-l-[8px] border-t-[8px] border-b-[8px] rounded-s-lg border-[#e3e8ee]"
+        />
+      </div>
     </div>
   );
-}
+};
+
+export default App;
