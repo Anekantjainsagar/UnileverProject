@@ -47,7 +47,7 @@ const Dashboard = () => {
                 }}
                 className="text-white bg-darkBlue px-5 ml-4 py-2 rounded-lg text-lg"
               >
-                View PA Data
+                View PV Data
               </button>
             </div>
           </div>

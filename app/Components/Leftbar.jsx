@@ -28,7 +28,7 @@ const Leftbar = () => {
   ];
 
   return (
-    <div className="w-[14%] min-[1600px]:w-2/12 h-full px-6 pt-6 flex flex-col items-center justify-between border-r border-r-gray-200">
+    <div className="w-[14%] min-[1600px]:w-[18%] h-full px-6 pt-6 flex flex-col items-center justify-between border-r border-r-gray-200">
       <div className="w-full flex flex-col items-center">
         <Image
           src={"/text-logo.png"}

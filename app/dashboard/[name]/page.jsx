@@ -71,7 +71,7 @@ const Row = ({ id }) => {
     <div
       className={`grid ${
         id % 2 !== 0 ? "bg-gray-200" : ""
-      } text-sm min-[1600px]:text-base mb-3 pl-6 pr-4 py-2 rounded-lg items-center`}
+      } text-sm min-[1600px]:text-lg mb-3 pl-6 pr-4 py-2 rounded-lg items-center`}
       style={{ gridTemplateColumns: "5% 22% 21% 12% 20% 20%" }}
     >
       <p className="text-center">{id + 1}</p>
@@ -86,10 +86,10 @@ const Row = ({ id }) => {
       </div>
       <div className="flex items-center justify-center">
         {!showInput ? (
-          <p className="min-[1600px]:text-xl font-medium flex items-center">
+          <p className="font-medium flex items-center">
             {value}
             <CiEdit
-              className="cursor-pointer text-gray-700 mt-1 rounded-full min-[1600px]:text-lg ml-1"
+              className="cursor-pointer text-gray-700 mt-1 rounded-full ml-1"
               onClick={() => setShowInput(!showInput)}
             />
           </p>
@@ -104,7 +104,7 @@ const Row = ({ id }) => {
               value={value}
               onChange={(e) => setValue(e.target.value)}
               placeholder="Enter QR Code Value"
-              className="outline-none border border-gray-400 px-4 rounded-lg min-[1600px]:text-lg w-3/12"
+              className="outline-none border border-gray-400 px-4 rounded-lg w-3/12"
             />
             <MdCheck
               className="bg-green-500 text-white text-xl min-[1600px]:text-2xl mx-3 cursor-pointer p-1 min-[1600px]:p-0.5 rounded-full"
@@ -144,7 +144,7 @@ const Row = ({ id }) => {
         </label>
       </div>
       <p className="text-center">A-102-102</p>
-      <p className="text-sm min-[1600px]:text-lg text-center">5</p>
+      <p className="text-center">5</p>
     </div>
   );
 };
