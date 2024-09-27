@@ -9,7 +9,7 @@ const Row = ({ idx }) => {
     <div
       className={`grid grid-cols-5 ${
         idx % 2 !== 0 ? "bg-white" : "bg-bgBlue/50"
-      } cursor-pointer py-4 px-6 rounded-lg text-lg`}
+      } cursor-pointer py-4 px-6 rounded-lg text-sm min-[1600px]:text-lg`}
       onClick={() => {
         history.push("/dashboard/prowiz-analytics");
       }}

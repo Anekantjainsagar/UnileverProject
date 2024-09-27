@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <div className="flex h-screen">
-      <div className="w-5/12 p-[62px] flex flex-col items-start justify-between h-full">
+      <div className="w-5/12 p-12 min-[1600px]:p-[62px] flex flex-col items-start justify-between h-full">
         <Image
           src={"/logo.png"}
           alt="Logo"
@@ -20,7 +20,7 @@ const App = () => {
           className="w-[5vw]"
         />
         <div className="w-full">
-          <h2 className="text-darkBlack text-4xl font-semibold">
+          <h2 className="text-darkBlack text-3xl min-[1600px]:text-4xl font-semibold">
             Login to continue
           </h2>{" "}
           <div className="flex flex-col my-6">
@@ -38,7 +38,7 @@ const App = () => {
               }}
               type="text"
               placeholder="Enter Email"
-              className="bg-transparent w-8/12 outline-none border border-gray-300 px-4 py-2 rounded-lg text-lg"
+              className="bg-transparent w-8/12 outline-none border border-gray-300 px-4 py-2 rounded-lg min-[1600px]:text-lg"
             />
           </div>
           <label htmlFor="password" className="text-sm min-[1600px]:text-base">
@@ -53,7 +53,7 @@ const App = () => {
                 setUser({ ...user, password: e.target.value });
               }}
               placeholder="Enter Password"
-              className="bg-transparent w-full outline-none border border-gray-300 px-4 py-2 rounded-lg text-lg"
+              className="bg-transparent w-full outline-none border border-gray-300 px-4 py-2 rounded-lg min-[1600px]:text-lg"
             />
             <div
               className="absolute top-1/2 -translate-y-1/2 text-gray-500 right-4 text-lg min-[1600px]:text-2xl cursor-pointer"
@@ -70,15 +70,15 @@ const App = () => {
               e.preventDefault();
               history.push("/dashboard");
             }}
-            className="text-white bg-darkBlue mt-8 w-8/12 py-3 text-xl font-semibold rounded-lg"
+            className="text-white bg-darkBlue mt-8 w-8/12 py-2.5 min-[1600px]:py-3 min-[1600px]:text-xl font-semibold rounded-lg"
           >
             Login
           </button>
         </div>
         <div className="py-10"></div>
       </div>
-      <div className="w-7/12 bg-lightBlue pl-[80px] flex flex-col items-start justify-center m-5 rounded-lg overflow-hidden">
-        <h1 className="text-lightGrey text-5xl font-semibold w-6/12 mb-6 leading-tight">
+      <div className="w-7/12 bg-lightBlue pl-16 min-[1600px]:pl-[80px] flex flex-col items-start justify-center m-5 rounded-lg overflow-hidden">
+        <h1 className="text-lightGrey text-4xl min-[1600px]:text-5xl font-semibold w-6/12 mb-6 leading-tight">
           Real-Time Inventory Verification Platform
         </h1>
         <Image
@@ -86,7 +86,7 @@ const App = () => {
           alt="Dashboard"
           width={1000}
           height={1000}
-          className="w-[100vw] object-cover object-left h-[75vh] border-l-[8px] border-t-[8px] border-b-[8px] rounded-s-lg border-[#e3e8ee]"
+          className="w-[100vw] object-cover object-left min-[1600px]:h-[75vh] border-l-[8px] border-t-[8px] border-b-[8px] rounded-s-lg border-[#e3e8ee]"
         />
       </div>
     </div>

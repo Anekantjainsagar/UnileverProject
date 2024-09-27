@@ -13,16 +13,18 @@ const Dashboard = ({ params }) => {
   return (
     <div className="flex items-start h-screen">
       <Leftbar />
-      <div className="w-10/12">
+      <div className="w-[86%] min-[1600px]:w-10/12">
         <Topbar />
-        <div className="p-6 h-[90vh] bg-[#F7F7F7]">
+        <div className="p-5 min-[1600px]:p-6 h-[92vh] min-[1600px]:h-[90vh] bg-[#F7F7F7]">
           <div className="flex items-center justify-between">
-            <h4 className="text-3xl font-semibold">Detailed Analysis </h4>{" "}
-            <button className="text-white bg-darkBlue text-lg font-medium px-7 rounded-lg py-1.5">
+            <h4 className="text-2xl min-[1600px]:text-3xl font-semibold">
+              Detailed Analysis{" "}
+            </h4>{" "}
+            <button className="text-white bg-darkBlue min-[1600px]:text-lg font-medium px-7 rounded-lg min-[1600px]:py-1.5 py-1">
               Save
             </button>
           </div>
-          <div className="mt-4 rounded-lg h-[94%] flex flex-col justify-between bg-white border border-gray-300/30">
+          <div className="mt-3 min-[1600px]:mt-4 rounded-lg h-[93%] min-[1600px]:h-[94%] flex flex-col justify-between bg-white border border-gray-300/30">
             <div className="h-[8%] flex items-center px-4 border-b border-b-gray-300/30">
               <div
                 className="grid bg-white rounded-lg w-full px-6"
@@ -37,7 +39,10 @@ const Dashboard = ({ params }) => {
                   "Include in Analysis",
                 ].map((e, i) => {
                   return (
-                    <p key={i} className="text-lg font-medium text-center">
+                    <p
+                      key={i}
+                      className="min-[1600px]:text-lg font-medium text-center"
+                    >
                       {e}
                     </p>
                   );
@@ -64,7 +69,7 @@ const Row = ({ id }) => {
 
   return (
     <div
-      className="grid border border-gray-300/30 mb-3 pl-6 pr-4 py-1 rounded-lg items-center"
+      className="grid border text-sm min-[1600px]:text-base border-gray-300/30 mb-3 pl-6 pr-4 py-1 rounded-lg items-center"
       style={{ gridTemplateColumns: "5% 22% 21% 20% 20% 12%" }}
     >
       <p className="text-center">{id}</p>
@@ -79,10 +84,10 @@ const Row = ({ id }) => {
       </div>
       <div className="flex items-center justify-center">
         {!showInput ? (
-          <p className="text-xl font-medium flex items-center">
+          <p className="min-[1600px]:text-xl font-medium flex items-center">
             {value}
             <CiEdit
-              className="cursor-pointer text-gray-700 mt-1 rounded-full text-lg ml-1"
+              className="cursor-pointer text-gray-700 mt-1 rounded-full min-[1600px]:text-lg ml-1"
               onClick={() => setShowInput(!showInput)}
             />
           </p>
@@ -97,22 +102,21 @@ const Row = ({ id }) => {
               value={value}
               onChange={(e) => setValue(e.target.value)}
               placeholder="Enter QR Code Value"
-              className="outline-none border border-gray-400 px-4 rounded-lg text-lg w-3/12"
+              className="outline-none border border-gray-400 px-4 rounded-lg min-[1600px]:text-lg w-3/12"
             />
             <MdCheck
-              className="bg-green-500 text-white text-2xl mx-3 cursor-pointer p-0.5 rounded-full"
+              className="bg-green-500 text-white text-xl min-[1600px]:text-2xl mx-3 cursor-pointer p-1 min-[1600px]:p-0.5 rounded-full"
               onClick={() => setShowInput(!showInput)}
             />{" "}
             <AiOutlineClose
-              className="bg-red-500 text-white text-2xl cursor-pointer p-0.5 rounded-full"
+              className="bg-red-500 text-white text-xl min-[1600px]:text-2xl cursor-pointer p-1 min-[1600px]:p-0.5 rounded-full"
               onClick={() => setShowInput(!showInput)}
             />
           </div>
         )}
       </div>
       <p className="text-center">A-102-102</p>
-      <p className="px-4 text-lg text-center">
-        <span className="font-medium mr-1">Path:</span>
+      <p className="px-4 text-sm min-[1600px]:text-lg text-center">
         /xyz/qr.png
       </p>{" "}
       <div class="inline-flex items-center justify-center">
@@ -120,13 +124,13 @@ const Row = ({ id }) => {
           <input
             type="checkbox"
             defaultChecked={true}
-            class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none border-2 border-gray-200 rounded-md transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-6 before:w-6 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-200 checked:bg-darkBlue checked:before:bg-gray-800 hover:before:opacity-10"
+            class="before:content[''] peer relative min-[1600px]:h-6 min-[1600px]:w-6 w-4 h-4 cursor-pointer appearance-none border-2 border-gray-200 rounded-md transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-6 before:w-6 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-200 checked:bg-darkBlue checked:before:bg-gray-800 hover:before:opacity-10"
             id="check"
           />
           <span class="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
+              class="min-[1600px]:h-4 min-[1600px]:w-4 w-2.5 h-2.5"
               viewBox="0 0 20 20"
               fill="currentColor"
               stroke="currentColor"

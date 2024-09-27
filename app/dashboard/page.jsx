@@ -7,10 +7,12 @@ const Dashboard = () => {
   return (
     <div className="flex items-start h-screen">
       <Leftbar />
-      <div className="w-10/12">
+      <div className="w-[86%] min-[1600px]:w-10/12">
         <Topbar />
-        <div className="p-6 h-[90vh] bg-[#F7F7F7]">
-          <h4 className="text-3xl font-semibold">Recent Sessions</h4>
+        <div className="p-5 min-[1600px]:p-6 h-[92vh] min-[1600px]:h-[90vh] bg-[#F7F7F7]">
+          <h4 className="text-2xl min-[1600px]:text-3xl font-semibold">
+            Recent Sessions
+          </h4>
           <div className="mt-4 rounded-lg h-[94%]">
             <div className="grid grid-cols-5 bg-white py-4 pl-6 pr-8 rounded-lg">
               {[
@@ -21,13 +23,16 @@ const Dashboard = () => {
                 "User",
               ].map((e, i) => {
                 return (
-                  <p key={i} className="text-center text-lg font-medium">
+                  <p
+                    key={i}
+                    className="text-center min-[1600px]:text-lg font-medium"
+                  >
                     {e}
                   </p>
                 );
               })}
             </div>
-            <div className="h-[90%] overflow-y-auto">
+            <div className="h-[90%] min-[1600px]:h-[90%] overflow-y-auto">
               {Array(20)
                 .fill()
                 .map((e, i) => {

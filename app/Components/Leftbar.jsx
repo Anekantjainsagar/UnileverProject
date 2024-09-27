@@ -27,7 +27,7 @@ const Leftbar = () => {
   ];
 
   return (
-    <div className="w-2/12 h-full px-6 pt-6 flex flex-col items-center justify-between border-r border-r-gray-200">
+    <div className="w-[14%] min-[1600px]:w-2/12 h-full px-6 pt-6 flex flex-col items-center justify-between border-r border-r-gray-200">
       <div className="w-full flex flex-col items-center">
         <Image
           src={"/text-logo.png"}
@@ -46,7 +46,7 @@ const Leftbar = () => {
         onClick={() => {
           history.push("/");
         }}
-        className="bg-bgBlue w-full flex items-center py-3 px-6 rounded-full mb-6 text-lg gap-x-3"
+        className="bg-bgBlue w-full flex items-center py-3 px-6 rounded-full mb-6 min-[1600px]:text-lg gap-x-3"
       >
         <CiLogout />
         <span>Logout</span>
@@ -57,7 +57,7 @@ const Leftbar = () => {
 
 const Button = ({ data }) => {
   return (
-    <button className="bg-bgBlue flex items-center py-3 px-5 rounded-full mb-6 text-lg gap-x-2">
+    <button className="bg-bgBlue flex items-center py-3 px-5 rounded-full mb-6 min-[1600px]:text-lg gap-x-2">
       {data?.img}
       <span>{data?.title}</span>
     </button>
