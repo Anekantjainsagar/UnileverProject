@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { AiOutlineHome } from "react-icons/ai";
 import { CiLogout } from "react-icons/ci";
 
 const Leftbar = () => {
@@ -37,9 +38,15 @@ const Leftbar = () => {
           className="w-11/12"
         />
         <div className="mt-12 flex flex-col w-full">
-          {data?.map((e, i) => {
-            return <Button key={i} data={e} />;
-          })}
+          <button
+            onClick={() => {
+              history.push("/dashboard");
+            }}
+            className="bg-bgBlue flex items-center py-3 px-5 rounded-full mb-6 min-[1600px]:text-lg gap-x-3"
+          >
+            <AiOutlineHome />
+            <span>Home</span>
+          </button>
         </div>
       </div>{" "}
       <button
@@ -52,15 +59,6 @@ const Leftbar = () => {
         <span>Logout</span>
       </button>
     </div>
-  );
-};
-
-const Button = ({ data }) => {
-  return (
-    <button className="bg-bgBlue flex items-center py-3 px-5 rounded-full mb-6 min-[1600px]:text-lg gap-x-2">
-      {data?.img}
-      <span>{data?.title}</span>
-    </button>
   );
 };
 

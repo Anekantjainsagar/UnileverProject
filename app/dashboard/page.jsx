@@ -37,7 +37,7 @@ const Dashboard = () => {
             <div>
               <input
                 type="date"
-                className="px-3 py-1 rounded-md outline-none"
+                className="px-5 py-2 rounded-md outline-none text-center text-lg"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
@@ -45,7 +45,7 @@ const Dashboard = () => {
                 onClick={() => {
                   setSelectedDate(date);
                 }}
-                className="text-white bg-darkBlue px-3 ml-4 py-0.5 rounded-lg"
+                className="text-white bg-darkBlue px-5 ml-4 py-2 rounded-lg text-lg"
               >
                 View PA Data
               </button>
