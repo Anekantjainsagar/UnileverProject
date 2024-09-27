@@ -10,7 +10,7 @@ const Dashboard = () => {
       <div className="w-10/12">
         <Topbar />
         <div className="p-6 h-[90vh] bg-[#F7F7F7]">
-          <h4 className="text-3xl font-semibold">Recent QC Sessions</h4>
+          <h4 className="text-3xl font-semibold">Recent Sessions</h4>
           <div className="mt-4 rounded-lg h-[94%]">
             <div className="grid grid-cols-5 bg-white py-4 pl-6 pr-8 rounded-lg">
               {[

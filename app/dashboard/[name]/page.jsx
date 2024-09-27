@@ -11,10 +11,10 @@ const Dashboard = () => {
       <div className="w-10/12">
         <Topbar />
         <div className="p-6 h-[90vh] bg-[#F7F7F7]">
-          <h4 className="text-3xl font-semibold">Recent QC Sessions</h4>
+          <h4 className="text-3xl font-semibold">Recent Sessions</h4>
           <div className="mt-4 rounded-lg h-[94%] bg-white border border-gray-300">
             <div className="h-[8%] flex items-center px-4">
-              <h5 className="text-xl font-medium">Columns 1-40</h5>
+              <h5 className="text-xl font-medium">Columns 1-20</h5>
             </div>
             <div className="h-[92%] overflow-y-auto">
               {Array(4)
@@ -35,8 +35,8 @@ const Row = () => {
 
   return (
     <div
-      className={`grid cursor-pointer py-2 px-6 gap-x-2 rounded-lg text-lg`}
-      style={{ gridTemplateColumns: "repeat(40, 1fr)" }}
+      className={`grid cursor-pointer py-2 px-6 gap-2 rounded-lg text-lg`}
+      style={{ gridTemplateColumns: "repeat(20, 1fr)" }}
     >
       {Array(40)
         .fill()
@@ -50,7 +50,7 @@ const Row = () => {
               }}
               className={`${
                 i % 2 == 0 ? "bg-green-200" : "bg-red-200"
-              } flex flex-col items-center rounded-md justify-center aspect-square`}
+              } flex flex-col items-center rounded-md justify-center aspect-square p-0.5`}
             >
               <p className="text-xl font-medium">{i + 1}</p>
               <span className="text-sm text-center mt-1 text-gray-800">
