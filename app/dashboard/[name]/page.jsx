@@ -12,17 +12,19 @@ const Dashboard = () => {
         <Topbar />
         <div className="p-6 h-[90vh] bg-[#F7F7F7]">
           <h4 className="text-3xl font-semibold">Recent Sessions</h4>
-          <div className="mt-4 rounded-lg h-[94%] bg-white border border-gray-300">
-            <div className="h-[8%] flex items-center px-4">
-              <h5 className="text-xl font-medium">Columns 1-20</h5>
-            </div>
-            <div className="h-[92%] overflow-y-auto">
-              {Array(4)
-                .fill()
-                .map((e, i) => {
-                  return <Row key={i} />;
-                })}
-            </div>
+          <div className="mt-4 overflow-y-auto rounded-lg h-[94%] bg-white border border-gray-300 py-2">
+            {Array(4)
+              .fill()
+              .map((e, i) => {
+                return (
+                  <div key={i}>
+                    <h5 className="text-xl font-medium px-3 mb-2">
+                      Columns {20 * i + 1} - {i * 20 + 20}
+                    </h5>
+                    <Row />
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>
@@ -35,7 +37,7 @@ const Row = () => {
 
   return (
     <div
-      className={`grid cursor-pointer py-1 px-6 gap-2 rounded-lg text-lg`}
+      className={`grid cursor-pointer py-1 px-5 gap-2 rounded-lg text-lg mb-2`}
       style={{ gridTemplateColumns: "repeat(20, 1fr)" }}
     >
       {Array(40)
