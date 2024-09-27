@@ -16,6 +16,14 @@ const Dashboard = () => {
   const [selectedDate, setSelectedDate] = useState(getCurrentDate());
   const [date, setDate] = useState(getCurrentDate());
 
+  let data = useMemo(() => {
+    return [
+      ...Array(40).fill(0), // 40 zeroes
+      ...Array(30).fill(1), // 30 ones
+      ...Array(5).fill(2), // 5 twos
+    ].sort(() => Math.random() - 0.5);
+  }, [selectedDate]);
+
   return (
     <div className="flex items-start h-screen">
       <Leftbar />
@@ -48,19 +56,13 @@ const Dashboard = () => {
               className="grid gap-1.5 min-[1600px]:gap-2"
               style={{ gridTemplateColumns: "repeat(15, 1fr)" }}
             >
-              {[
-                ...Array(40).fill(0), // 40 zeroes
-                ...Array(30).fill(1), // 30 ones
-                ...Array(5).fill(2), // 5 twos
-              ]
-                .sort(() => Math.random() - 0.5)
-                .map((e, i) => {
-                  return (
-                    <div key={i}>
-                      <Row i={i} data={e} />
-                    </div>
-                  );
-                })}
+              {data.map((e, i) => {
+                return (
+                  <div key={i}>
+                    <Row i={i} data={e} />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
