@@ -35,7 +35,7 @@ const Row = () => {
 
   return (
     <div
-      className={`grid cursor-pointer py-2 px-6 gap-2 rounded-lg text-lg`}
+      className={`grid cursor-pointer py-1 px-6 gap-2 rounded-lg text-lg`}
       style={{ gridTemplateColumns: "repeat(20, 1fr)" }}
     >
       {Array(40)
@@ -50,10 +50,10 @@ const Row = () => {
               }}
               className={`${
                 i % 2 == 0 ? "bg-green-200" : "bg-red-200"
-              } flex flex-col items-center rounded-md justify-center aspect-square p-0.5`}
+              } flex flex-col items-center rounded-md justify-center aspect-square`}
             >
-              <p className="text-xl font-medium">{i + 1}</p>
-              <span className="text-sm text-center mt-1 text-gray-800">
+              <p className="text-base font-medium">{i + 1}</p>
+              <span className="text-sm text-center mt-1 text-gray-800 w-8/12">
                 A-102-102
               </span>
             </div>

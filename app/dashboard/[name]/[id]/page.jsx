@@ -5,6 +5,7 @@ import Topbar from "../../../Components/Topbar";
 import Leftbar from "../../../Components/Leftbar";
 import { CiEdit } from "react-icons/ci";
 import { MdCheck } from "react-icons/md";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Dashboard = ({ params }) => {
   const { id } = params;
@@ -78,10 +79,10 @@ const Row = ({ id }) => {
       </div>
       <div className="flex items-center justify-center">
         {!showInput ? (
-          <p className="text-center relative text-xl font-medium">
+          <p className="text-xl font-medium flex items-center">
             {value}
             <CiEdit
-              className="absolute -bottom-2 cursor-pointer -right-4 bg-darkBlue text-white p-1 rounded-full text-xl"
+              className="cursor-pointer text-gray-700 mt-1 rounded-full text-lg ml-1"
               onClick={() => setShowInput(!showInput)}
             />
           </p>
@@ -90,20 +91,22 @@ const Row = ({ id }) => {
             <label htmlFor="qrValue" className="mr-3">
               Value:
             </label>
-            <div className="relative w-3/12">
-              <input
-                type="text"
-                id="qrValue"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-                placeholder="Enter QR Code Value"
-                className="outline-none border border-gray-400 px-4 rounded-lg text-lg w-full"
-              />
-              <MdCheck
-                className="absolute bg-green-500 -right-2 text-white text-xl cursor-pointer p-0.5 -bottom-1 rounded-full"
-                onClick={() => setShowInput(!showInput)}
-              />
-            </div>
+            <input
+              type="text"
+              id="qrValue"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              placeholder="Enter QR Code Value"
+              className="outline-none border border-gray-400 px-4 rounded-lg text-lg w-3/12"
+            />
+            <MdCheck
+              className="bg-green-500 text-white text-2xl mx-3 cursor-pointer p-0.5 rounded-full"
+              onClick={() => setShowInput(!showInput)}
+            />{" "}
+            <AiOutlineClose
+              className="bg-red-500 text-white text-2xl cursor-pointer p-0.5 rounded-full"
+              onClick={() => setShowInput(!showInput)}
+            />
           </div>
         )}
       </div>
@@ -116,7 +119,7 @@ const Row = ({ id }) => {
         <label class="relative flex items-center p-3 cursor-pointer">
           <input
             type="checkbox"
-            checked={true}
+            defaultChecked={true}
             class="before:content[''] peer relative h-6 w-6 cursor-pointer appearance-none border-2 border-gray-200 rounded-md transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-6 before:w-6 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-200 checked:bg-darkBlue checked:before:bg-gray-800 hover:before:opacity-10"
             id="check"
           />

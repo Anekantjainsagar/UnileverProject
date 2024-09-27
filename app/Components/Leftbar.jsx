@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { CiLogout } from "react-icons/ci";
 
 const Leftbar = () => {
+  const history = useRouter();
   let data = [
     {
       img: (
@@ -19,7 +22,7 @@ const Leftbar = () => {
           />
         </svg>
       ),
-      title: "New QC Session",
+      title: "New Session",
     },
   ];
 
@@ -39,7 +42,12 @@ const Leftbar = () => {
           })}
         </div>
       </div>{" "}
-      <button className="bg-red-500 font-medium w-full text-white flex items-center justify-center py-3 px-5 rounded-full mb-6 text-lg gap-x-3">
+      <button
+        onClick={() => {
+          history.push("/");
+        }}
+        className="bg-bgBlue w-full flex items-center py-3 px-6 rounded-full mb-6 text-lg gap-x-3"
+      >
         <CiLogout />
         <span>Logout</span>
       </button>
